@@ -71,7 +71,7 @@ def displayMenu():
     for products, item_code in menu.items(): 
         # store category and design in a variable to center it 
         heading = (f"⛧ ────────────⋆⋅[' {products} ']⋅⋆──────────── ⛧")
-        print(f"\n" + heading.center(200)) # centered
+        print("\n" + heading.center(200)) # centered
           # guide: code = user input  item = item corresponding to code
         for code, item in item_code.items():
             # store item code, name, price, stock in a variable to center it
@@ -79,7 +79,7 @@ def displayMenu():
             print(line.expandtabs(20).center(215)) # centered
         # centered divider
         divider = "──────────── ⋆ ⋅ ☆ ⋅ ⋆ ────────────"
-        print(f"\n" + divider.center(200)) # centered 
+        print("\n" + divider.center(200)) # centered 
 
 # fucn for getting user's choice of item
 def selectItem():
