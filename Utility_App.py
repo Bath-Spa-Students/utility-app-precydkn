@@ -142,8 +142,17 @@ def dispenseItem(money, code): # the money and code parameters are taken from th
         if code in item_codes:
             # convert menu[products][code]["Price"] into string to remove "⋅ "
             print(f'{margin}{white}Great! One {purple}{(str(menu[products][code]["Item"])).removeprefix("⋅ ")} {white}will now be dispensed.{black}')
-            enter = input(f"{margin}ᴘʀᴇꜱꜱ ᴇɴᴛᴇʀ ᴛᴏ ᴄʟᴀɪᴍ ʏᴏᴜʀ ɪᴛᴇᴍ ")
+            enter = input(f"{margin}ᴘʀᴇꜱꜱ ᴇɴᴛᴇʀ ᴏʀ ᴀɴʏ ᴋᴇʏ ᴛᴏ ᴄʟᴀɪᴍ ʏᴏᴜʀ ɪᴛᴇᴍ ")
             if enter == "":
+                print(f'\n{margin}.\n{margin}.\n{margin}.\n{white}') # just "." spaces
+                print(f'{margin}Your {purple}{(str(menu[products][code]["Item"])).removeprefix("⋅ ")} {white}is here! (੭ •̀ ᗜ •́ )੭')
+                money = money - menu[products][code]["Price"]
+                # just display 0 change if it is, otherwise return change to user
+                if money == 0:
+                    print(f"{green}{margin}Change: 0 AED\n{white}")
+                else: 
+                    print(f"{margin}Don't forget to take your {green}Change: {money} AED\n{white}")
+            else:
                 print(f'\n{margin}.\n{margin}.\n{margin}.\n{white}') # just "." spaces
                 print(f'{margin}Your {purple}{(str(menu[products][code]["Item"])).removeprefix("⋅ ")} {white}is here! (੭ •̀ ᗜ •́ )੭')
                 money = money - menu[products][code]["Price"]
